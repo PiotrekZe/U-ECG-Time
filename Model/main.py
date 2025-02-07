@@ -34,10 +34,10 @@ def main():
         peaks_idx[int(0.8 * peaks_idx.shape[0]) :],
     )
 
-    train_dataset = ECGDataset(
+    train_dataset = ECGDataset.ECGDataset(
         X_train.transpose(0, 2, 1), y_train, peaks_train, peaks_idx_train
     )
-    test_dataset = ECGDataset(
+    test_dataset = ECGDataset.ECGDataset(
         X_test.transpose(0, 2, 1), y_test, peaks_test, peaks_idx_test
     )
 
@@ -48,7 +48,9 @@ def main():
         test_dataset, batch_size=batch_size, shuffle=True, drop_last=False
     )
 
-    model = UTime.UTime(lengths=lengths, channels=channels, num_classes=num_classes)
+    model = UTime.UTime(lengths=lengths, channels=channels, num_classes=num_classes).to(
+        device
+    )
     criterion = FocalLoss.FocalLoss()
     optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 

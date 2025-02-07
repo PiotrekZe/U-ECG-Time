@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-import DecoderBlock
-import EncoderBlock
+from DecoderBlock import DecoderBlock
+from EncoderBlock import EncoderBlock
 
 
 class UTime(nn.Module):

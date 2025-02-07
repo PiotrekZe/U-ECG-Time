@@ -1,7 +1,13 @@
 import numpy as np
 from collections import Counter
 import torch
-from sklearn.metrics import recall_score, precision_score, accuracy_score, f1_score
+from sklearn.metrics import (
+    recall_score,
+    precision_score,
+    accuracy_score,
+    f1_score,
+    confusion_matrix,
+)
 
 
 def categorize_data(targets, preds, peaks):
