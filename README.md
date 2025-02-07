@@ -24,7 +24,7 @@ Instead of treating this problem purely as a segmentation task, I also drew from
 
 1. ECG signal segmentation inspired by the U-Net model and its adaptation for EEG segmentation in the U-Time study.
 2. ECG segmentation offers significant advantages over simple classification of individual beats by simplifying preprocessing and preserving heartbeat context.
-3. Achieved results: x%, y% (to be updated).
+3. Achieved results: 82% accuracy on test set.
 
 
 ## To-do list:
